@@ -11,7 +11,7 @@ def getip(x):
     x = '.'.join(x)
     return x
 
-directory = os.fsencode("C:\\Users\\Neeranjan\\Desktop\\testingLogs\\")
+directory = os.fsencode("C:\\Users\\Neeranjan\\Desktop\\Logs4Proj\\Wednesday-14-02-2018\\Windows\\")
     
 for file in os.listdir(directory):
     filename = os.fsdecode(file)

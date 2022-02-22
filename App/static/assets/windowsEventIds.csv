@@ -1,0 +1,43 @@
+EventIDs,Title,Description
+1,Process creation,The process creation event provides extended information about a newly created process. The full command line provides context on the process execution. The ProcessGUID field is a unique value for this process across a domain to make event correlation easier. The hash is a full hash of the file with the algorithms in the HashType field.
+6,Driver loaded,The driver loaded events provides information about a driver being loaded on the system. The configured hashes are provided as well as signature information. The signature is created asynchronously for performance reasons and indicates if the file was removed after loading.
+12,RegistryEvent (object create and delete),Registry key and value create and delete operations map to this event type  which can be useful for monitoring for changes to Registry autostart locations  or specific malware registry modifications.
+13,RegistryEvent (Value Set),This Registry event type identifies Registry value modifications. The event records the value written for Registry values of type DWORD and QWORD.
+15,FileCreateStreamHash,This event logs when a named file stream is created  and it generates events that log the hash of the contents of the file to which the stream is assigned (the unnamed stream)  as well as the contents of the named stream. There are malware variants that drop their executables or configuration settings via browser downloads  and this event is aimed at capturing that based on the browser attaching a Zone.Identifier “mark of the web” stream.
+16,Sysmon config state changed,Sysmon config state changed. This event may or may not include a hash.  A hash will depend on whether Sysmon was called with a configuration XML file or if it was just used via configuration settings on the command line.  If a configuration XML was specified then the hash of the file will be logged so that you can detect if anyone reconfigures Sysmon with an unauthorized configuration file which will produce a different hash. 
+18,Pipe connected,Named pipes can be used to provide communication between processes on the same computer or between processes on different computers across a network. If the server service is running  all named pipes are accessible remotely.
+20,WmiEventConsumer activity detected,An activity was performed by a WmiEventConsumer
+27,SharePoint group member added,A member was added to a SharePoint group (see event ID 25 for more information on SharePoint groups).  This is an important event since members receive whatever permissions are assigned to the group.
+32,Permissions removed,The permissions of the target were removed from the object.
+35,The permissions of the target were removed from the object.,"A permission level or ""role"" was deleted. Permission levels are determined at Site Collection Administration. If a permission level is deleted all groups that are assigned that level will no longer have that access."
+36,Permission level modified,"A permission level or ""role"" has been modified. The details indicate the permissions that were assigned after the modification. Permission levels are determined at Site Collection Administration."
+37,SharePoint site collection administrator added,A member was added to site collection administrators.
+41,Abrupt Reboot,The system has rebooted without cleanly shutting down first.
+55,File system failure,File system structure on the disk is corrupt and unusable.
+98,Volume risk of faliure,Volume needs to be taken offline to perform a full chkdsk.
+109,Task Scheduler task active,Task Scheduler launched instance of task.
+1014,Network Connectivity unstable,The server failed to retrieve the security identifier (SID) of the TS Session Broker server.
+1074,System Shutdown,System has been shutdown by a process/user.
+1108,Event Logging Service Error,The event logging service encountered an error while processing an incoming event.
+1111,Terminal Services Printer Redirection,Terminal Services provides printer redirection  which routes printing jobs from a server to a printer that is attached to a client computer or to a shared printer that is available to the client computer.
+4200,TCP/IP Network Interface Configuration Error,IP interfaces on this network adapter may not be initialized completely
+4201,Network Adapter Initialization,The system detected that network adapter %2 was connected to the network  and has initiated normal operation over the network adapter.
+6005,EventLog Service Initialization,The event log service was started
+6006,EventLog Service Halted,The event log service was stopped
+6008,Unexpected Shutdown,System shut down unexpectedly.
+6009,System Information,Indicates the Windows product name  version  build number  service pack number  and operating system type detected at boot time.
+6013,System Uptime,Displays the uptime of the computer
+7001,TCP/IP NetBIOS Helper Service failed to start.,The TCP/IP NetBIOS Helper Service depends on the NetBIOS over TCP/IP service which failed to start because of the following error: The service cannot be started  either because it is disabled or because it has no enabled devices associated with it.
+7002,DFS root/link issue,Distributed File System (DFS) root or DFS links are not present when the Microsoft Exchange Information Store Service is started.
+7026,The following boot-start or system-start driver(s) failed to load,The specified drivers did not load correctly because the drivers might not be in the expected location. To resolve this issue  verify that the most current versions of the drivers are installed and update drivers if needed.
+7036,Portable Device Enumerator Service running/stopping,The Portable Device Enumerator Service service entered the stopped/running state.
+7042,WSUS - Windows Server Update Services,The WSUS administration console was unable to connect to the WSUS Server Database.
+10148,WinRM Listener Availability,The WinRM service is listening for WS-Management requests. User Action Use the following command to see the specific IPs on which WinRM is listening: winrm enumerate winrm/config/listener.
+10149,WinRM service issue,WinRM service is not listening for WS-Management requests.
+16962,Remote calls to the SAM database are being restricted using the default security descriptor: %1.%n ,Emit event when registry SDDL is absent  causing fallback to default hard-coded SDDL (event should include a copy of the default SDDL).
+36874,Schannel SSL connection request has failed.,An TLS 1.2 connection request was received from a remote client application  but none of the cipher suites supported by the client application are supported by the server.
+36888,Schannel SSL-HTTP error,A user tries to access a web site using HTTP but specifies an SSL port in the URL.
+50036,Dhcpv4-Client service starting,Dhcpv4-Client service has been initialized
+50037,DHCPv4 client service is stopped,DHCPv4 client service is forced to stop. ShutDown Flag value is 1
+51046,DHCPv6 client service started,DHCPv6 client service has been initialized.
+51047,microsoft-windows-DHCPv6-client/admin stopped,Router Advertisement settings have been changed on the network adapter 13. The current M - Managed Address Configuration flag is false and the O - Other Stateful Configuration flag is false. User Action: If you are seeing this event frequently  then it could be due to frequent change in M and O flag settings on the router in the network. Please contact your network administrator to have it resolved.

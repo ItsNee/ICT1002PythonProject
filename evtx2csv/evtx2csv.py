@@ -20,7 +20,9 @@ for file in os.listdir(directory):
     #print(filename)
     #print(filenameCSV)
     #print(ip)
-    print(check_output('"C:\\Program Files (x86)\\Log Parser 2.2\\LogParser.exe" "Select * into '+str(directory.decode("utf-8"))+str(filenameCSV)+' from '+str(directory.decode("utf-8"))+str(filename)+'" -i:evt -o:csv', shell=True).decode())
+    print(check_output('"C:\\Program Files (x86)\\Log Parser 2.2\\LogParser.exe" "Select * into '
+    +str(directory.decode("utf-8"))+str(filenameCSV)+' from '+str(directory.decode("utf-8"))
+    +str(filename)+'" -i:evt -o:csv', shell=True).decode())
     df = pd.read_csv(directory.decode("utf-8") + filenameCSV) # create temp pandas dataframe
     df["Ip_Address"] = ip
     print(df["TimeGenerated"])
